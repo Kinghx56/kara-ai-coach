@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, User, Bell, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -72,6 +73,7 @@ export default function Navigation({ isAuthenticated = false, user }: Navigation
 
           {/* Right side */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             {isAuthenticated ? (
               <>
                 <Button variant="ghost" size="icon" className="relative">
@@ -105,12 +107,16 @@ export default function Navigation({ isAuthenticated = false, user }: Navigation
               </>
             ) : (
               <>
-                <Button variant="ghost" className="text-foreground hover:text-primary">
-                  Login
-                </Button>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Sign Up Free
-                </Button>
+                <a href="/login">
+                  <Button variant="ghost" className="text-foreground hover:text-primary">
+                    Login
+                  </Button>
+                </a>
+                <a href="/signup">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    Sign Up Free
+                  </Button>
+                </a>
               </>
             )}
           </div>
@@ -170,13 +176,17 @@ export default function Navigation({ isAuthenticated = false, user }: Navigation
               )}
               <div className="pt-4 pb-2 border-t border-border/50">
                 {!isAuthenticated && (
-                  <div className="space-y-2">
-                    <Button variant="ghost" className="w-full justify-start">
-                      Login
-                    </Button>
-                    <Button className="w-full bg-primary hover:bg-primary/90">
-                      Sign Up Free
-                    </Button>
+                <div className="space-y-2">
+                    <a href="/login">
+                      <Button variant="ghost" className="w-full justify-start">
+                        Login
+                      </Button>
+                    </a>
+                    <a href="/signup">
+                      <Button className="w-full bg-primary hover:bg-primary/90">
+                        Sign Up Free
+                      </Button>
+                    </a>
                   </div>
                 )}
               </div>

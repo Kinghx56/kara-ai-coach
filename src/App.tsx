@@ -8,6 +8,9 @@ import Pricing from "./pages/Pricing";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
+import InterviewSetup from "./pages/InterviewSetup";
+import InterviewLive from "./pages/InterviewLive";
+import FeedbackDashboard from "./pages/FeedbackDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +27,10 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/interview-setup" element={<InterviewSetup />} />
+          <Route path="/start-session" element={<InterviewSetup />} />
+          <Route path="/interview-live" element={<InterviewLive />} />
+          <Route path="/feedback" element={<FeedbackDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

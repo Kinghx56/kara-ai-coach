@@ -1,4 +1,12 @@
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 export default function Footer() {
   return (
@@ -13,6 +21,45 @@ export default function Footer() {
             <p className="text-muted-foreground max-w-sm">
               The AI-powered interview coaching platform that helps you master your next opportunity.
             </p>
+            
+            {/* Navigation Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="w-full justify-between">
+                  Navigate Pages
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuItem>
+                  <a href="/" className="w-full">Home</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/pricing" className="w-full">Pricing</a>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <a href="/login" className="w-full">Login</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/signup" className="w-full">Sign Up</a>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <a href="/dashboard" className="w-full">Dashboard</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/interview-setup" className="w-full">Interview Setup</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/interview-live" className="w-full">Live Interview</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/feedback" className="w-full">Feedback Dashboard</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter className="h-5 w-5" />
